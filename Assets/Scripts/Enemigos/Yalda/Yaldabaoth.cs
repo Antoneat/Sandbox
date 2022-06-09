@@ -46,6 +46,8 @@ public class Yaldabaoth : MonoBehaviour
         basico1Txt.SetActive(false);
         basico3Txt.SetActive(false);
         especialTxt.SetActive(false);
+
+        actualvida = maxVida;
     }
 
     void Update()
