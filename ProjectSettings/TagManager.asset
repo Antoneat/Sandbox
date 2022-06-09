@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Piso
+  - Enemigo
+  - AtaqueUno
+  - AtaqueDos
+  - AtaqueTres
+  - AtaqueCargado
+  - RangoAtaqueEnemy1
+  - AtaqueNormalEnemy1
+  - MordiscoEnemy1
+  - FueraDelMundo
+  - Golpe2
+  - AtkBasicoE2
+  - Rafaga2
+  - Verdugo
+  - Walls
+  - onda
+  - manos
+  - portalA
+  - PortalB
+  - PortalC
+  - PortalD
+  - especial
+  - basico1
+  - basico3
+  - Escalera
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Player
+  - Water
+  - UI
+  - Enemigo
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
