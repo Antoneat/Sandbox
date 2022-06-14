@@ -10,6 +10,8 @@ public class MainMenuController : MonoBehaviour
 
     public GameObject menuFirstButton, optionsFirstButtonMainMenu, optionsCloseButton;
 
+    public CamMovimientoMenu movimientoMenu;
+
     void Start()
     {
         //AudioManager.instance.Play("MenuSong");
@@ -32,7 +34,7 @@ public class MainMenuController : MonoBehaviour
     public void OpenOptions()
     {
         optionsMainMenu.SetActive(true);
-
+        
         //clear selected object
         EventSystem.current.SetSelectedGameObject(null);
         //Set a new selected object
@@ -42,7 +44,7 @@ public class MainMenuController : MonoBehaviour
     public void CloseOptions()
     {
         optionsMainMenu.SetActive(false);
-
+        movimientoMenu.currentView = movimientoMenu.viewsMp[6];
         //clear selected object
         EventSystem.current.SetSelectedGameObject(null);
         //Set a new selected object
