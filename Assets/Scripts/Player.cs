@@ -253,30 +253,30 @@ public class Player : MonoBehaviour
         if (horizontal > 0) //Dirección donde se mueve
         {
             movement.z = 0;
-            movement.x = 1;
+            //movement.x = 1;
         }
         else if (horizontal < 0)
         {
             movement.z = 0;
-            movement.x = -1;
+            //movement.x = -1;
         }
 
         if(vertical > 0)
         {
-            movement.x = 0;
+            //movement.x = 0;
             movement.z = 1;
         }
         else if (vertical < 0)
         {
-            movement.x = 0;
+            //movement.x = 0;
             movement.z = -1;
         }
 
-        if (movement.x < 0) //Giro del sprite cuando mueve DERECHA o IZQUIERDA 
+        if (rb.velocity.x < 0) //Giro del sprite cuando mueve DERECHA o IZQUIERDA 
         {
             spriteRenderer.flipX = false;
         }
-        else if (movement.x > 0)
+        else if (rb.velocity.x > 0)
         {
             spriteRenderer.flipX = true;
         }

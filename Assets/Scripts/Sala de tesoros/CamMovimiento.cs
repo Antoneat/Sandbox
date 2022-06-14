@@ -27,7 +27,7 @@ public class CamMovimiento : MonoBehaviour
             luces[1].SetActive(false);
             if (Input.GetKeyDown(KeyCode.A))
             {
-                currentView = views[4];
+                //currentView = views[4];
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
@@ -85,7 +85,7 @@ public class CamMovimiento : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.D))
             {
-                currentView = views[0];
+                //currentView = views[0];
             }
         }
     }
