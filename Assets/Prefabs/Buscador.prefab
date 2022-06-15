@@ -361,8 +361,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 2
-  m_Speed: 130
-  m_Acceleration: 140
+  m_Speed: 8
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 3
@@ -397,6 +397,7 @@ MonoBehaviour:
   mordiscoGO: {fileID: 3749412668544408187}
   mordiscoTxt: {fileID: 0}
   knockbackStrength: 0
+  coPlay: 0
 --- !u!114 &3512289961150925359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +413,6 @@ MonoBehaviour:
   agent: {fileID: 3749412667670454103}
   destPoint: 0
   goal: {fileID: 0}
-  player: {fileID: 0}
   playerDistance: 0
   awareAI: 10
   atkRange: 5

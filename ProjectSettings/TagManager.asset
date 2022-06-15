@@ -30,6 +30,7 @@ TagManager:
   - basico3
   - Escalera
   - Goal
+  - Tienda
   layers:
   - Default
   - TransparentFX

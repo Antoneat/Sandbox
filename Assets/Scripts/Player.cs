@@ -483,6 +483,13 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         // if (collider.gameObject.CompareTag("RangoAtaqueEnemy1")) enmy.playerOnRange = true;
+        if (collider.gameObject.CompareTag("Tienda"))
+        {
+
+            SceneManager.LoadScene("Tienda");
+
+        }
+
         if (collider.gameObject.CompareTag("manos"))
         {
 
