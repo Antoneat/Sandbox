@@ -26,7 +26,7 @@ public class enemyPatrol2 : MonoBehaviour
 		agent.autoBraking = false;
 
 
-		goal = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+		goal = GameObject.FindGameObjectWithTag("Goal").GetComponent<Transform>();
 	}
 
 	void Update()
@@ -69,6 +69,7 @@ public class enemyPatrol2 : MonoBehaviour
 		transform.Translate(Vector3.forward * Speed * Time.deltaTime);
 		//agent.SetDestination(goal.transform.position);
 		agent.destination = goal.position;
+		agent.stoppingDistance = 5;
 		
 	}
 
