@@ -73,16 +73,7 @@ public class Enemy : MonoBehaviour
         
     }
 
-  /*  public void activator()
-    {
-        switch(Random.Range(0,2))
-        {
-            case 0: StartCoroutine(AtaqueBasico());
-                break;
-            case 1: StartCoroutine(Mordisco());
-                break;
-        }
-    }*/
+
 
     IEnumerator AtaqueBasico()
     {

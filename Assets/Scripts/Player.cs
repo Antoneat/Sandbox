@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
     [Header("Enemigos")]
     [SerializeField] private GameObject BuscadorPrefab;
     [SerializeField] private GameObject VerdugoPrefab;
-    //[SerializeField] private GameObject YaldaPrefab;
+    [SerializeField] private GameObject YaldaPrefab;
     //[SerializeField] private GameObject SamaelPrefab;
 
   
@@ -483,6 +483,12 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         // if (collider.gameObject.CompareTag("RangoAtaqueEnemy1")) enmy.playerOnRange = true;
+        if (collider.gameObject.CompareTag("manos"))
+        {
+
+            actualvida -= 4;
+
+        }
 
         if (collider.gameObject.CompareTag("AtaqueNormalEnemy1"))
         {
@@ -661,6 +667,11 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V))
         {
             Instantiate(VerdugoPrefab, transform.position + new Vector3(2,0,0), Quaternion.identity);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            Instantiate(YaldaPrefab, transform.position + new Vector3(2, 3, 0), Quaternion.identity);
         }
     }
 
