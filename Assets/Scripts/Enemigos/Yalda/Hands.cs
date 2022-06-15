@@ -33,6 +33,9 @@ public class Hands : MonoBehaviour
 
     public bool vulnerable;
     bool loop;
+
+    public bool coPlay;
+
     void Start()
     {
         itemSp.SetActive(false);
@@ -250,20 +253,7 @@ public class Hands : MonoBehaviour
         itemSp.SetActive(true);
     }*/
 
-    private void OnTriggerEnter(Collider collider)
-    {
-        if (vulnerable ==true)
-        {
-            if (collider.gameObject.CompareTag("AtaqueUno")) actualvida -= plyr.AttackDmgUno; // Baja la vida del enemigo acorde con el valor que se puso en el ataque.
 
-            if (collider.gameObject.CompareTag("AtaqueDos")) actualvida -= plyr.AttackDmgDos; // Lo de arriba x2.
-
-            if (collider.gameObject.CompareTag("AtaqueTres")) actualvida -= plyr.AttackDmgTres; // Lo de arriba x3.
-
-            if (collider.gameObject.CompareTag("AtaqueCargado")) actualvida -= plyr.AttackDmgCargado; // Lo de arriba x4.
-        }
-
-    }
 
 
 }

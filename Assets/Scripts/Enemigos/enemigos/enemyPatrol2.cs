@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemyPatrol2 : MonoBehaviour
 {
 
-	public float Speed;
+	//public float Speed;
 	//public float damping = 6.0f;
 
 	public UnityEngine.AI.NavMeshAgent agent;
@@ -23,10 +23,11 @@ public class enemyPatrol2 : MonoBehaviour
 		UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 
 
-		agent.autoBraking = false;
+		//agent.autoBraking = false;
 
 
 		goal = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+		agent.SetDestination(goal.position);
 	}
 
 	void Update()

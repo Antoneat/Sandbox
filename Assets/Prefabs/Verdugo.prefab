@@ -171,7 +171,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8230865892871845001}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 2
   m_Speed: 130
   m_Acceleration: 140
   avoidancePriority: 50
@@ -180,7 +180,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1
+  m_Height: 2
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -213,6 +213,7 @@ MonoBehaviour:
   rafagaTxt: {fileID: 0}
   knockbackStrength: 0
   playerpos: {x: 0, y: 0, z: 0}
+  coPlay: 0
 --- !u!114 &8506037080635863092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dbe56ed31b0d4c498798cc8e27de2e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
   agent: {fileID: 8230865892871844997}
   destPoint: 0
   goal: {fileID: 0}

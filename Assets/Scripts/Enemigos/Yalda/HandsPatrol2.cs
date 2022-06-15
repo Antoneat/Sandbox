@@ -100,4 +100,5 @@ public class HandsPatrol2 : MonoBehaviour
 			if (collider.gameObject.CompareTag("AtaqueCargado")) h.actualvida -= plyr.AttackDmgCargado; // Lo de arriba x4.
 		}
 	}
+
 }

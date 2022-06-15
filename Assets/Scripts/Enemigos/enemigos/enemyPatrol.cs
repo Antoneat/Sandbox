@@ -12,7 +12,6 @@ public class enemyPatrol : MonoBehaviour
 
 	public int destPoint = 0;
 	public Transform goal;
-	public Transform player;
 
 	public float playerDistance;
 	public float awareAI;
