@@ -26,7 +26,7 @@ public class enemyPatrol2 : MonoBehaviour
 		agent.autoBraking = false;
 
 
-		goal = GameObject.FindGameObjectWithTag("Goal").GetComponent<Transform>();
+		goal = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 	}
 
 	void Update()
@@ -38,21 +38,24 @@ public class enemyPatrol2 : MonoBehaviour
 			LookAtPlayer();
 			Debug.Log("Seen");
 			Chase();
+			agent.isStopped = false;
 		}
 		else if (playerDistance > awareAI)
 		{
 			LookAtPlayer();
-			agent.speed = 0;
+			agent.isStopped = true;
 		}
 
 
 		if (playerDistance <= atkRange)
 		{
 			ee2.ChooseAtk2();
+			agent.isStopped = false;
 		}
 		else if (playerDistance > atkRange)
 		{
 			LookAtPlayer();
+			agent.isStopped = false;
 		}
 	}
 
@@ -60,17 +63,26 @@ public class enemyPatrol2 : MonoBehaviour
 	{
 		transform.LookAt(goal);
 	}
-	
+
 
 
 	public void Chase()
 	{
+		agent.stoppingDistance = 3;
+		agent.SetDestination(goal.position);
 
-		transform.Translate(Vector3.forward * Speed * Time.deltaTime);
-		//agent.SetDestination(goal.transform.position);
-		agent.destination = goal.position;
-		agent.stoppingDistance = 5;
-		
+		//transform.Translate(Vector3.forward * Speed * Time.deltaTime);
+
+		if (agent.remainingDistance > agent.stoppingDistance)
+		{
+			agent.isStopped = false;
+
+		}
+		else if (agent.remainingDistance < agent.stoppingDistance)
+		{
+			agent.isStopped = true;
+		}
+
 	}
 
 

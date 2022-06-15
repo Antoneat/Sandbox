@@ -26,14 +26,13 @@ public class enemyPatrol : MonoBehaviour
 		//agent.autoBraking = false;
 
 		goal = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
 		agent.SetDestination(goal.position);
 	}
 
 	void Update()
 	{
-		playerDistance = Vector3.Distance(transform.position, player.position);
+		playerDistance = Vector3.Distance(transform.position, goal.position);
 
 		if (playerDistance <= awareAI)
 		{
@@ -73,12 +72,13 @@ public class enemyPatrol : MonoBehaviour
 	{
 		agent.stoppingDistance = 3;
 		agent.SetDestination(goal.position);
+
 		//transform.Translate(Vector3.forward * Speed * Time.deltaTime);
+
 		if (agent.remainingDistance > agent.stoppingDistance)
         {
 			agent.isStopped = false;
-			//agent.destination = goal.position;
-			//agent.SetDestination(goal.position);
+
 		}
 		else if (agent.remainingDistance < agent.stoppingDistance)
         {
