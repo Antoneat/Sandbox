@@ -7,6 +7,8 @@ public class CamMovimiento : MonoBehaviour
     public Transform[] views;
     public GameObject[] luces;
 
+    public GameObject[] PanelesInfo;
+
     public float transitionSpeed;
 
     public Transform currentView;
@@ -33,6 +35,10 @@ public class CamMovimiento : MonoBehaviour
             {
                 currentView = views[1];
             }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                PanelesInfo[0].SetActive(true);
+            }
         }
 
         else if (currentView == views[1])
@@ -48,6 +54,10 @@ public class CamMovimiento : MonoBehaviour
             {
                 currentView = views[2];
             }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                PanelesInfo[1].SetActive(true);
+            }
         }
 
         else if (currentView == views[2])
@@ -60,6 +70,10 @@ public class CamMovimiento : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.D))
             {
                 currentView = views[3];
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                PanelesInfo[2].SetActive(true);
             }
         }
 
@@ -74,6 +88,10 @@ public class CamMovimiento : MonoBehaviour
             {
                 currentView = views[4];
             }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                PanelesInfo[3].SetActive(true);
+            }
         }
 
         else if (currentView == views[4])
@@ -87,7 +105,20 @@ public class CamMovimiento : MonoBehaviour
             {
                 //currentView = views[0];
             }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                PanelesInfo[4].SetActive(true);
+            }
         }
+    }
+
+    public void ClosePaneles()
+    {
+        PanelesInfo[0].SetActive(false);
+        PanelesInfo[1].SetActive(false);
+        PanelesInfo[2].SetActive(false);
+        PanelesInfo[3].SetActive(false);
+        PanelesInfo[4].SetActive(false);
     }
 
     private void LateUpdate()
