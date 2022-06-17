@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class CamMovimientoMenu : MonoBehaviour
 {
+    public GameObject TextEnter;
+    public GameObject MenuPrincipal;
+
     public Transform[] viewsMp;
     //public GameObject[] luces;
 
@@ -14,6 +18,7 @@ public class CamMovimientoMenu : MonoBehaviour
 
     public MainMenuController mainMenuController;
 
+
     void Start()
     {
         currentView = viewsMp[0];
@@ -22,108 +27,63 @@ public class CamMovimientoMenu : MonoBehaviour
 
     void Update()
     {
-
-        if (currentView == viewsMp[0]) //jugar
+        if (currentView == viewsMp[0]) //lugar inicial
         {
-            /*luces[0].SetActive(true);
-            luces[1].SetActive(false);*/
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                //currentView = views[4];
-            }
-            if (Input.GetKeyDown(KeyCode.D))
+            if(Input.GetKeyDown(KeyCode.Return))
             {
                 currentView = viewsMp[1];
+                TextEnter.SetActive(false);
             }
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                Time.timeScale = 1;
-                SceneManager.LoadScene("Loading");
-            }
-        }
-
-        else if (currentView == viewsMp[1]) //CARGAR
-        {
-            /*luces[0].SetActive(false);
-            luces[1].SetActive(true);¨*/
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                currentView = viewsMp[0];
-            }
-
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                currentView = viewsMp[2];
-            }
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                Time.timeScale = 1;
-                //SceneManager.LoadScene("Sala de Trofeos");
-            }
-        }
-
-        else if (currentView == viewsMp[2]) //TESOROS
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                currentView = viewsMp[1];
-            }
-
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                currentView = viewsMp[3];
-            }
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                Time.timeScale = 1;
-                SceneManager.LoadScene("Sala de Trofeos");
-            }
-        }
-
-        else if (currentView == viewsMp[3]) //OPCIONES
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                currentView = viewsMp[2];
-            }
-
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                currentView = viewsMp[4];
-            }
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                currentView = viewsMp[5];
-                mainMenuController.OpenOptions();
-            }
-        }
-
-        else if (currentView == viewsMp[4]) //SALIR
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                currentView = viewsMp[3];
-            }
-
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                //currentView = viewsMp[0];
-            }
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                Debug.Log("Saliste del infierno");
-                Application.Quit();
-            }
-        }
-
-        else if (currentView == viewsMp[6]) //condicional 3_7
-        {
-            currentView = viewsMp[3];
         }
     }
 
     private void LateUpdate()
     {
         transform.position = Vector3.Lerp(transform.position, currentView.position, Time.deltaTime * transitionSpeedMp);
+
+        Vector3 currentAngle = new Vector3(
+            Mathf.Lerp(transform.rotation.eulerAngles.x, currentView.transform.rotation.eulerAngles.x,
+            Time.deltaTime * transitionSpeedMp),
+
+            Mathf.Lerp(transform.rotation.eulerAngles.y, currentView.transform.rotation.eulerAngles.y,
+            Time.deltaTime * transitionSpeedMp),
+
+            Mathf.Lerp(transform.rotation.eulerAngles.z, currentView.transform.rotation.eulerAngles.z,
+            Time.deltaTime * transitionSpeedMp)
+
+            );
+
+        transform.eulerAngles = currentAngle;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag ==  "View1")
+        {
+            MenuPrincipal.SetActive(true);
+            //clear selected object
+            EventSystem.current.SetSelectedGameObject(null);
+            //Set a new selected object
+            EventSystem.current.SetSelectedGameObject(mainMenuController.menuFirstButton);
+        }
+        else if (other.gameObject.tag == "View2")
+        {
+            mainMenuController.optionsMainMenu.SetActive(true);
+            //clear selected object
+            EventSystem.current.SetSelectedGameObject(null);
+            //Set a new selected object
+            EventSystem.current.SetSelectedGameObject(mainMenuController.optionsFirstButtonMainMenu);
+        }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag ==  "View1")
+        {
+            MenuPrincipal.SetActive(false);
+        }
+        else if (other.gameObject.tag == "View2")
+        {
+            mainMenuController.optionsMainMenu.SetActive(false);
+        }
     }
 }

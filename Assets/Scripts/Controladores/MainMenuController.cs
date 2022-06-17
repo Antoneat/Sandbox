@@ -33,18 +33,17 @@ public class MainMenuController : MonoBehaviour
 
     public void OpenOptions()
     {
-        optionsMainMenu.SetActive(true);
+        movimientoMenu.currentView = movimientoMenu.viewsMp[2];
+
+        //optionsMainMenu.SetActive(true);
+
         
-        //clear selected object
-        EventSystem.current.SetSelectedGameObject(null);
-        //Set a new selected object
-        EventSystem.current.SetSelectedGameObject(optionsFirstButtonMainMenu);
     }
 
     public void CloseOptions()
     {
-        optionsMainMenu.SetActive(false);
-        movimientoMenu.currentView = movimientoMenu.viewsMp[6];
+        //optionsMainMenu.SetActive(false);
+        movimientoMenu.currentView = movimientoMenu.viewsMp[1];
         //clear selected object
         EventSystem.current.SetSelectedGameObject(null);
         //Set a new selected object

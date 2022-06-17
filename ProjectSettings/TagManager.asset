@@ -31,6 +31,8 @@ TagManager:
   - Escalera
   - Goal
   - Tienda
+  - View1
+  - View2
   layers:
   - Default
   - TransparentFX
