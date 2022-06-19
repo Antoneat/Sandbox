@@ -14,22 +14,32 @@ public class Samael : MonoBehaviour
     public bool dentroDeRangoDeteccion;
     public bool enHabilidad;
 
-    [Header("Juego Sucio")]
+    [Header("Juego Sucio")]     // 1ra habilidad
     public bool primeraHabilidad;
     public Transform ultimaPosPlayer;
     public float velDeImpulso = 7f;
 
-    [Header("Ataque Basico")]
+    [Header("Ataque Basico")]     // 2da habilidad
     public bool segundaHabilidad;
     public float samaelBasico12DMG = 3.5f;   // hacer interaccion en el script player.
     public GameObject samaelBasico12GO;  // hacer GO en inspector.
     public float samaelBasico3DMG = 5f;   // hacer interaccion en el script player.
     public GameObject samaelBasico3GO;  // hacer GO en inspector.
 
-    [Header("Ataque Cargado")]
+    [Header("Ataque Cargado")]     // 3ra habilidad
     public bool terceraHabilidad;
     public float samaelCargadoDMG = 6.5f;   // hacer interaccion en el script player.
     public GameObject samaelCargadoGO;  // PONER dentro del script del player, si choca en este trigger, que quede stuneado.
+
+    [Header("Invocacion")]      // 4ta habilidad
+
+
+    [Header("Dia Del Juicio")]      // 5ta habilidad
+    public bool diaDelJuicio;
+    public bool diaDelJuicioEND;    // Cuando termine la habilidad
+    public float coolDownDiaDelJuicio;  // Cooldown para que vuelva a usar la habilidad
+
+    [Header("Armamento")]       // 6ta habilidad
 
     [Header("Componenetes")]
     public Player plyr;
@@ -47,6 +57,8 @@ public class Samael : MonoBehaviour
         agent.speed = 1f;
         enHabilidad = false;
         dentroDeRangoDeteccion = false;
+        diaDelJuicio = false;
+        diaDelJuicioEND = false;
     }
 
 
@@ -68,7 +80,21 @@ public class Samael : MonoBehaviour
         {
             StartCoroutine(AtaqueCargado());
         }
+        else if (vida <= 25 && diaDelJuicio == false && coolDownDiaDelJuicio == 0 && enHabilidad == false)  // Dia del juicio 5ta habilidad
+        {
+            StartCoroutine(DiaDelJuicioStart());
+        }
 
+        if (diaDelJuicioEND)
+        {
+            StartCoroutine(DiaDelJuicioEnd());
+        }
+        else return;
+
+        if(coolDownDiaDelJuicio > 0)
+        {
+            coolDownDiaDelJuicio -= Time.deltaTime;
+        }
     }
 
     IEnumerator JuegoSucio() // 1ra Habilidad
@@ -113,7 +139,7 @@ public class Samael : MonoBehaviour
         yield break;
     }
 
-    IEnumerator AtaqueCargado()
+    IEnumerator AtaqueCargado() // 3ra habilidad
     {
         enHabilidad = true;
         terceraHabilidad = true;
@@ -133,4 +159,30 @@ public class Samael : MonoBehaviour
         yield break;
     }
 
+
+
+    IEnumerator DiaDelJuicioStart() // 5ta habilidad start
+    {
+        enHabilidad = true;
+        diaDelJuicio = true;
+        yield return new WaitForSeconds(5f);
+        StartCoroutine(Armamento());
+        yield break;
+    }
+    IEnumerator Armamento() // 6ta habilidad 
+    {
+
+        diaDelJuicioEND = true;
+        yield break;
+    }
+
+    IEnumerator DiaDelJuicioEnd() // 5ta habilidad end
+    {
+        agent.speed = 0;
+        // animacion de descanso;
+        yield return new WaitForSeconds(6f);
+        coolDownDiaDelJuicio = 30f;
+        agent.speed = 1;
+        yield break;
+    }
 }
