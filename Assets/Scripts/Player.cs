@@ -70,6 +70,10 @@ public class Player : MonoBehaviour
     int b = 0;
     public StateManager SM;
     public bool closeToStair;
+    public bool dashMejorado;
+    public bool basicoMejorado;
+    public bool cargadoRojo;
+    public bool cargadoAzul;
 
     [Header("VFX")]
     public GameObject ataqueUno;
@@ -95,7 +99,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         actualvida = maxVida;
-        almas = 0;
+        //almas = 0;
         blck = false;
         bloqueoDuracion = bloqueoMaxDuracion;
 
@@ -120,7 +124,7 @@ public class Player : MonoBehaviour
 
         dmgTxt.text = "Daño: " + AttackDmgUno.ToString();
 
-        almasText.text = "Almas: " + almas.ToString();
+       // almasText.text = "Almas: " + almas.ToString();
 
         collecTxt.text = counterCollectables.ToString() + " / 5";
 
@@ -483,12 +487,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         // if (collider.gameObject.CompareTag("RangoAtaqueEnemy1")) enmy.playerOnRange = true;
-        if (collider.gameObject.CompareTag("Tienda"))
-        {
-
-            SceneManager.LoadScene("Tienda");
-
-        }
+        
 
         if (collider.gameObject.CompareTag("manos"))
         {
