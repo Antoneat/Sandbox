@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public Transform playerTransform;
     public Rigidbody rb;
     public SpriteRenderer spriteRenderer; //Giro del sprite
+    public LayerMask suelo;
 
     [Header("Vida")]
     public float actualvida;
@@ -119,6 +120,8 @@ public class Player : MonoBehaviour
     {
         invocacionesEnemigos();
         Blocking();
+
+        Caida();
 
         vidapersonajeTxt.text = "Vida: " + actualvida.ToString();
 
@@ -249,7 +252,7 @@ public class Player : MonoBehaviour
 
         if (dash == false) 
         {
-            rb.velocity = new Vector3(horizontal * speed * Time.fixedDeltaTime, 0, vertical * speed * Time.fixedDeltaTime);
+            rb.velocity = new Vector3(horizontal * speed * Time.fixedDeltaTime, rb.velocity.y, vertical * speed * Time.fixedDeltaTime);
             playerTransform.rotation = Quaternion.LookRotation(movement);
             //movement = new Vector3(0, 0, 0);
         }
@@ -257,23 +260,44 @@ public class Player : MonoBehaviour
         if (horizontal > 0) //Dirección donde se mueve
         {
             movement.z = 0;
-            //movement.x = 1;
+            movement.x = 1;
         }
         else if (horizontal < 0)
         {
             movement.z = 0;
-            //movement.x = -1;
+            movement.x = -1;
         }
 
         if(vertical > 0)
         {
-            //movement.x = 0;
+            movement.x = 0;
             movement.z = 1;
         }
         else if (vertical < 0)
         {
-            //movement.x = 0;
+            movement.x = 0;
             movement.z = -1;
+        }
+
+        if(horizontal > 0 && vertical > 0)
+        {
+            movement.x = 1;
+            movement.z = 1;
+        }
+        else if (horizontal < 0 && vertical < 0)
+        {
+            movement.x = -1;
+            movement.z = -1;
+        }
+        else if (horizontal > 0 && vertical < 0)
+        {
+            movement.x = 1;
+            movement.z = -1;
+        }
+        else if (horizontal < 0 && vertical > 0)
+        {
+            movement.x = -1;
+            movement.z = 1;
         }
 
         if (rb.velocity.x < 0) //Giro del sprite cuando mueve DERECHA o IZQUIERDA 
@@ -284,35 +308,31 @@ public class Player : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
-        /*
-        if(horizontal > 0)
+
+
+
+
+    }
+
+    public void Caida()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, -transform.up, out hit, 1f))
         {
-            ataqueUnoGO.transform.position = transform.position + new Vector3(2, 0, 0);
-            ataqueDosGO.transform.position = transform.position + new Vector3(2, 0, 0);
-            ataqueTresGO.transform.position = transform.position + new Vector3(2, 0, 0);
-            ataqueCargGO.transform.position = transform.position + new Vector3(2, 0, 0);
+            if (hit.collider.gameObject.name == "Suelo")
+            {
+                Debug.Log("Tocando suelo");
+            }
+
+            if (hit.collider.gameObject.name != "Suelo")
+            {
+                rb.AddForce(Vector3.down * 3f, ForceMode.Impulse);
+                //rb.velocity.y = multiplicar su velocidad en Y;
+                Debug.Log("cayendo");
+            }
+            Debug.DrawRay(transform.position, -transform.up * 1f, Color.red);
         }
-        else if(horizontal < 0)
-        {
-            ataqueUnoGO.transform.position = transform.position + new Vector3(-2, 0, 0);
-            ataqueDosGO.transform.position = transform.position + new Vector3(-2, 0, 0);
-            ataqueTresGO.transform.position = transform.position + new Vector3(-2, 0, 0);
-            ataqueCargGO.transform.position = transform.position + new Vector3(-2, 0, 0);
-        }
-        else if(vertical > 0)
-        {
-            ataqueUnoGO.transform.position = transform.position + new Vector3(0, 0, 2);
-            ataqueDosGO.transform.position = transform.position + new Vector3(0, 0, 2);
-            ataqueTresGO.transform.position = transform.position + new Vector3(0, 0, 2);
-            ataqueCargGO.transform.position = transform.position + new Vector3(0, 0, 2);
-        }
-        else if (vertical < 0)
-        {
-            ataqueUnoGO.transform.position = transform.position + new Vector3(0, 0, -2);
-            ataqueDosGO.transform.position = transform.position + new Vector3(0, 0, -2);
-            ataqueTresGO.transform.position = transform.position + new Vector3(0, 0, -2);
-            ataqueCargGO.transform.position = transform.position + new Vector3(0, 0, -2);
-        }*/
     }
     
     IEnumerator Dash()
@@ -351,8 +371,9 @@ public class Player : MonoBehaviour
             rb.AddForce(new Vector3(-1, 0, -1) * speedDash, ForceMode.Impulse);
         }
 
-        //movement = new Vector3(0, 0, 0);
         yield return new WaitForSecondsRealtime(0.3f);
+        movement = new Vector3(0, 0, 0);
+        yield break;
     }
     
     private void AttackCombo()
@@ -425,6 +446,7 @@ public class Player : MonoBehaviour
             ataqueCargGO.SetActive(false);
         }
         attackCharged = false;
+        yield break;
     }
 
     private void Blocking()
