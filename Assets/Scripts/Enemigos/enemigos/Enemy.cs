@@ -55,6 +55,7 @@ public class Enemy : MonoBehaviour
         {
             plyr.actualvida += 10;
             plyr.almas += 10;
+            plyr.enemigosDerrotados++;
             dead = true;
             Destroy(gameObject);
         }

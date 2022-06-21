@@ -35,6 +35,23 @@ public class CamMovimientoMenu : MonoBehaviour
                 TextEnter.SetActive(false);
             }
         }
+
+        else if (currentView == viewsMp[3]) //sala de trofeos1.2
+        {
+                currentView = viewsMp[4];
+        }
+        else if (currentView == viewsMp[4]) //sala de trofeos 1.3
+        {
+                currentView = viewsMp[5];
+        }
+        else if (currentView == viewsMp[6]) //cerrar sala de trofeos 
+        {
+            currentView = viewsMp[7];
+        }
+        else if (currentView == viewsMp[7]) //cerrar sala de trofeos 1.3
+        {
+            currentView = viewsMp[1];
+        }
     }
 
     private void LateUpdate()
@@ -74,6 +91,17 @@ public class CamMovimientoMenu : MonoBehaviour
             //Set a new selected object
             EventSystem.current.SetSelectedGameObject(mainMenuController.optionsFirstButtonMainMenu);
         }
+
+        //SALA DE TROFEOS INTERFAZ
+        else if (other.gameObject.tag == "View5")
+        {
+            mainMenuController.salaTrofeosInterfaz.SetActive(true);
+            //clear selected object
+            EventSystem.current.SetSelectedGameObject(null);
+            //Set a new selected object
+            EventSystem.current.SetSelectedGameObject(mainMenuController.salaTrofeosFirstButton);
+        }
+
     }
     public void OnTriggerExit(Collider other)
     {
@@ -84,6 +112,12 @@ public class CamMovimientoMenu : MonoBehaviour
         else if (other.gameObject.tag == "View2")
         {
             mainMenuController.optionsMainMenu.SetActive(false);
+        }
+
+        //SALA DE TROFEOS
+        else if (other.gameObject.tag == "View5")
+        {
+            mainMenuController.salaTrofeosInterfaz.SetActive(false);
         }
     }
 }

@@ -92,13 +92,14 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject BuscadorPrefab;
     [SerializeField] private GameObject VerdugoPrefab;
     [SerializeField] private GameObject YaldaPrefab;
+    public int enemigosDerrotados;
     //[SerializeField] private GameObject SamaelPrefab;
 
   
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        enemigosDerrotados = 0;
         actualvida = maxVida;
         //almas = 0;
         blck = false;

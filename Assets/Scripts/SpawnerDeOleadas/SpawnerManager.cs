@@ -20,8 +20,12 @@ public class SpawnerManager : MonoBehaviour
     public int enemiesCounterAnt;
     public int enemiesCounter;
 
+    public Player plyr;
+
     void Start()
     {
+        plyr = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
         waveCount = 4;
         wave = 1;
         spawning = false;
@@ -35,12 +39,12 @@ public class SpawnerManager : MonoBehaviour
 
     void Update()
     {
-        if(spawning == false && enemiesSpawned == defeatedEnemies)
+        if(spawning == false && enemiesSpawned == plyr.enemigosDerrotados)
         {
             StartCoroutine(SpawnWave(waveCount));
         }
 
-        if (enemies[enemyType].GetComponent<Enemy>().dead == true)
+        /*if (enemies[enemyType].GetComponent<Enemy>().dead == true)
         {
             defeatedEnemies++;
         }
@@ -48,7 +52,7 @@ public class SpawnerManager : MonoBehaviour
         if (enemies[enemyType].GetComponent<Enemy2>().dead == true)
         {
             defeatedEnemies++;
-        }
+        }*/
     }
 
     IEnumerator SpawnWave(int waveC)

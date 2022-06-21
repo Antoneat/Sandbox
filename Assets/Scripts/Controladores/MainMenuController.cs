@@ -6,9 +6,9 @@ using UnityEngine.EventSystems;
 public class MainMenuController : MonoBehaviour
 {
 
-    public GameObject optionsMainMenu;
+    public GameObject optionsMainMenu, salaTrofeosInterfaz;
 
-    public GameObject menuFirstButton, optionsFirstButtonMainMenu, optionsCloseButton;
+    public GameObject menuFirstButton, optionsFirstButtonMainMenu, optionsCloseButton, salaTrofeosFirstButton;
 
     public CamMovimientoMenu movimientoMenu;
 
@@ -36,8 +36,6 @@ public class MainMenuController : MonoBehaviour
         movimientoMenu.currentView = movimientoMenu.viewsMp[2];
 
         //optionsMainMenu.SetActive(true);
-
-        
     }
 
     public void CloseOptions()
@@ -48,7 +46,20 @@ public class MainMenuController : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         //Set a new selected object
         EventSystem.current.SetSelectedGameObject(menuFirstButton);
+    }
+    public void OpenSalaTrofeos()
+    {
+        movimientoMenu.currentView = movimientoMenu.viewsMp[3]; //sale de trofeos 1.1
+    }
 
+    public void CloseSalaTrofeos()
+    {
+        //optionsMainMenu.SetActive(false);
+        movimientoMenu.currentView = movimientoMenu.viewsMp[6];
+        //clear selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        //Set a new selected object
+        EventSystem.current.SetSelectedGameObject(menuFirstButton);
     }
 
 }

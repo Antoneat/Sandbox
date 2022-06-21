@@ -33,6 +33,9 @@ TagManager:
   - Tienda
   - View1
   - View2
+  - View3
+  - View4
+  - View5
   layers:
   - Default
   - TransparentFX
