@@ -65,6 +65,8 @@ public class Enemy2 : MonoBehaviour
     {
         if (vida <= 0)
         {
+            plyr.killedEnemy = true;
+            plyr.dashIMG.SetActive(true);
             plyr.actualvida += 10;
             plyr.almas += 10;
             plyr.enemigosDerrotados++;
