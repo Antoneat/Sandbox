@@ -512,13 +512,6 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("FueraDelMundo")) transform.position = new Vector3(0,0.7f,0);
 
-        if (collision.gameObject.CompareTag("manos"))
-        {
-
-            actualvida -= 4;
-            lifeBar.SetVida(actualvida);
-
-        }
     }
 
     private void OnTriggerEnter(Collider collider)
