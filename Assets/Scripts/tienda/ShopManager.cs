@@ -141,8 +141,38 @@ public class ShopManager : MonoBehaviour
     public void ToggleShop()
     {
         shopUI.SetActive(!shopUI.activeSelf);
-    } 
+    }
+
+   /* private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            succUI.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            succUI.SetActive(false);
+        }
+    }
+
+    public void SuccIn()
+    {
+        succUI.SetActive(true);
+
+    }
+
+    public void SuccOut()
+    {
+        succUI.SetActive(false);
+
+    }*/
+
 }
+
 
 [System.Serializable]
 public class Upgrade

@@ -721,11 +721,6 @@ public class Player : MonoBehaviour
         {
             Instantiate(VerdugoPrefab, transform.position + new Vector3(2,0,0), Quaternion.identity);
         }
-
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            Instantiate(YaldaPrefab, transform.position + new Vector3(2, 3, 0), Quaternion.identity);
-        }
     }
 
     public void RecieveDmgWhenBlock(float dmg)
