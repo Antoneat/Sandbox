@@ -36,6 +36,8 @@ TagManager:
   - View3
   - View4
   - View5
+  - Bombita
+  - AtkBomb
   layers:
   - Default
   - TransparentFX
