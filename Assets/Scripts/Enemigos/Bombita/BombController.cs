@@ -5,6 +5,7 @@ using UnityEngine;
 public class BombController : MonoBehaviour
 {
 	private Player plyr;
+	private PlayerDash plyrDash;
 	public UnityEngine.AI.NavMeshAgent agent;
 
 	public int destPoint = 0;
@@ -36,6 +37,7 @@ public class BombController : MonoBehaviour
 		agent.SetDestination(goal.position);
 
 		plyr = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+		plyrDash = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDash>();
 
 		dead = false;
 		basicoGO.SetActive(false);
@@ -47,6 +49,8 @@ public class BombController : MonoBehaviour
 
 	void Update()
 	{
+		Muerte();
+
 		playerDistance = Vector3.Distance(transform.position, goal.position);
 
 		if (playerDistance <= awareAI)
@@ -98,10 +102,11 @@ public class BombController : MonoBehaviour
 		}
 	}
 
-	private void Muerte()
+	public void Muerte()
 	{
 		if (vida <= 0)
 		{
+			plyrDash.killedEnemy = true;
 			Destroy(gameObject);
 		}
 	}
