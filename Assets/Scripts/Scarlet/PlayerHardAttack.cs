@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttackCombo : MonoBehaviour
+public class PlayerHardAttack : MonoBehaviour
 {
     // public Animator anim;
     public BoxCollider armaCollider;
@@ -14,29 +14,29 @@ public class PlayerAttackCombo : MonoBehaviour
 
     void Start()
     {
-        // anim = GetCompenent<Animator>();
+        // anim = GetComponent<Animator>();
         // audio = GetComponent<AudioSouce>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.K))
         {
-            // anim.SetTrigger("PrimerAtaque" + combo);
+            // anim.SetTrigger("PrimerAtaqueFuerte" + combo);
             // audio.clip = sonido[combo];
             // audio.Play();
             armaCollider.enabled = true;
         }
     }
 
-    public void Attacking()
+    public void HardAttacking()
     {
         Debug.Log("Atacando");
         armaCollider.enabled = true;
         if (combo < 3) combo++;
     }
 
-    public void AfterAttacking()
+    public void AfterHardAttacking()
     {
         Debug.Log("Termino de atacar");
         armaCollider.enabled = false;
