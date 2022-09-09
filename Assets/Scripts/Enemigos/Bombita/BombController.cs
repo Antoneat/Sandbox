@@ -14,10 +14,7 @@ public class BombController : MonoBehaviour
 	public float awareAI;
 	public float atkRange;
 
-	[Header("Vida")]
-	public float vida;
-	public bool dead;
-
+	
 	[Header("AtaqueBasico")]
 	public GameObject basicoGO;
 	//public GameObject atkBTxt;
@@ -34,16 +31,12 @@ public class BombController : MonoBehaviour
 
 		agent.SetDestination(goal.position);
 
-		
-
-		dead = false;
 		basicoGO.SetActive(false);
 
 		//atkBTxt.SetActive(false);
 
 		coPlay = false;
 
-		vida = 5;
 	}
 
 	void Update()

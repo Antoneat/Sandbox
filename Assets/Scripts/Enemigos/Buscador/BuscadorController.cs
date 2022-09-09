@@ -13,10 +13,6 @@ public class BuscadorController : MonoBehaviour
 	public float awareAI;
 	public float atkRange;
 
-	[Header("Vida")]
-	public float vida;
-	public bool dead;
-
 	[Header("AtaqueBasico")]
 	public GameObject basicoGO;
 	//public GameObject atkBTxt;
@@ -34,8 +30,6 @@ public class BuscadorController : MonoBehaviour
 		agent.SetDestination(goal.position);
 
 
-
-		dead = false;
 		basicoGO.SetActive(false);
 
 		//atkBTxt.SetActive(false);
@@ -43,7 +37,7 @@ public class BuscadorController : MonoBehaviour
 		coPlay = false;
 		ataco = false;
 
-		vida = 10;
+		
 	}
 
 	void Update()

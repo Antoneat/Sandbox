@@ -122,14 +122,14 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 26e78b4ec6ab0f84aa6ddace37057765, type: 2}
 --- !u!43 &26696725
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-43204
+  m_Name: pb_Mesh44296
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -517,6 +517,10 @@ PrefabInstance:
     - target: {fileID: 6110932615483303702, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
       propertyPath: m_Name
       value: Arena de Almas (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110932615483303702, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
@@ -5329,8 +5333,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440156572}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.681046, y: 2.68, z: -20.49}
-  m_LocalScale: {x: 17.943, y: 5.7345505, z: 1}
+  m_LocalPosition: {x: 14.66, y: 2.68, z: -20.49}
+  m_LocalScale: {x: 23.566338, y: 5.7345505, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1664115820}
@@ -5592,6 +5596,10 @@ PrefabInstance:
     - target: {fileID: 6110932615483303702, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
       propertyPath: m_Name
       value: Arena de Almas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110932615483303702, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
@@ -5862,78 +5870,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1001 &662204737
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996329270984734764, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996329270984734765, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996329270987168848, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996329270987168862, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6996329270984734933, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-    - {fileID: 6893500588645919301, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-    - {fileID: 6996329270984734935, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -6132,7 +6068,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32558
+  m_Name: pb_Mesh26892
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6304,7 +6240,7 @@ GameObject:
   - component: {fileID: 840455171}
   m_Layer: 0
   m_Name: Detector
-  m_TagString: Untagged
+  m_TagString: DetectorBicho
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6680,6 +6616,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917893222}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &918348606
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996329270984734765, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
 --- !u!1 &936926600
 GameObject:
   m_ObjectHideFlags: 0
@@ -6716,7 +6709,7 @@ Transform:
   - {fileID: 1234296331}
   - {fileID: 75326358}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -6923,7 +6916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007112651}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.84, y: 0.85, z: -22.779999}
+  m_LocalPosition: {x: 13.84, y: 0.85, z: 3.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6943,7 +6936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2119726176885463038, guid: 81ad12a0bc2f1bd40b84a5717e34ea48, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2119726176885463038, guid: 81ad12a0bc2f1bd40b84a5717e34ea48, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6951,7 +6944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2119726176885463038, guid: 81ad12a0bc2f1bd40b84a5717e34ea48, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.309
+      value: -15.741
       objectReference: {fileID: 0}
     - target: {fileID: 2119726176885463038, guid: 81ad12a0bc2f1bd40b84a5717e34ea48, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7147,6 +7140,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arena de Almas (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6110932615483303702, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
 --- !u!4 &1234296331 stripped
@@ -7257,7 +7254,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32210
+  m_Name: pb_Mesh44124
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7597,7 +7594,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1414179484
 MeshCollider:
@@ -9776,7 +9773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472214857}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.34, y: 0.85, z: -24.28}
+  m_LocalPosition: {x: 10.07, y: 0.85, z: -5.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9929,6 +9926,10 @@ PrefabInstance:
     - target: {fileID: 6110932615483303702, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
       propertyPath: m_Name
       value: Arena de Almas (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110932615483303702, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
@@ -10230,79 +10231,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572869046}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1595787167 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6996329270984734765, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-  m_PrefabInstance: {fileID: 662204737}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1595787168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595787167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a002df998cf7b2745add04b97429de3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orientation: {fileID: 1595787174}
-  dashForce: 200
-  dashDuration: 0.25
-  killedEnemy: 1
---- !u!114 &1595787169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595787167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f02ffc7348fcf884a80848a28e2a600e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualvida: 0
---- !u!114 &1595787170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595787167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7410b955979cec747808a6ad367aec7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  armaCollider: {fileID: 1882366245}
-  combo: 0
---- !u!114 &1595787171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595787167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8031b40ec1f7a4b4186bfc9a08f43bf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 400
-  maxSpeed: 7
-  rgbd: {fileID: 1595787172}
---- !u!54 &1595787172 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 6996329270984734764, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-  m_PrefabInstance: {fileID: 662204737}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1595787174 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6996329270984734760, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-  m_PrefabInstance: {fileID: 662204737}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1664115815
 GameObject:
   m_ObjectHideFlags: 0
@@ -12482,7 +12410,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4906008913135897408, guid: b14e2c8afb9b30d49901e18f487d836d, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4906008913135897408, guid: b14e2c8afb9b30d49901e18f487d836d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12490,7 +12418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4906008913135897408, guid: b14e2c8afb9b30d49901e18f487d836d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.35
+      value: -15.7
       objectReference: {fileID: 0}
     - target: {fileID: 4906008913135897408, guid: b14e2c8afb9b30d49901e18f487d836d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12526,6 +12454,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4906008913135897410, guid: b14e2c8afb9b30d49901e18f487d836d, type: 3}
       propertyPath: m_Name
+      value: Buscador
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906008913135897410, guid: b14e2c8afb9b30d49901e18f487d836d, type: 3}
+      propertyPath: m_TagString
       value: Buscador
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12596,6 +12528,10 @@ PrefabInstance:
     - target: {fileID: 6110932615483303702, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
       propertyPath: m_Name
       value: Arena de Almas (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110932615483303702, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
@@ -14578,11 +14514,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1882366245 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 6996329270987168862, guid: 1208240184ee1c440b8682e6b8e3b40e, type: 3}
-  m_PrefabInstance: {fileID: 662204737}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1946781260
 GameObject:
   m_ObjectHideFlags: 0
@@ -14746,6 +14677,10 @@ PrefabInstance:
     - target: {fileID: 6110932615483303702, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
       propertyPath: m_Name
       value: Arena de Almas (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110932615483303702, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
@@ -17271,6 +17206,10 @@ PrefabInstance:
     - target: {fileID: 6110932615483303702, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
       propertyPath: m_Name
       value: Arena de Almas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110932615483303702, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34994739135fa0c44ab8636c2c771a38, type: 3}

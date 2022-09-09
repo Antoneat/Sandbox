@@ -7,15 +7,25 @@ public class DmgController : MonoBehaviour
     private Player plyr;
     private PlayerDash plyrDash;
 
-    private BombController Bcontrol;
+    private BombDmg bombdmg;
     public GameObject[] Bombitas;
+    public bool deadBomb;
 
-    private BuscadorController buscadorC;
+    private BuscadorController dogC;
+    private BuscadorDmg dogdmg;
+    public bool deadBusc;
+
     public float dmgMultiplier;
+
     void Start()
     {
-       plyr = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        plyr = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         plyrDash = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDash>();
+
+
+        bombdmg = GameObject.FindGameObjectWithTag("Bombita").GetComponent<BombDmg>();
+        dogC = GameObject.FindGameObjectWithTag("Buscador").GetComponent<BuscadorController>();
+        dogdmg = GameObject.FindGameObjectWithTag("Buscador").GetComponent<BuscadorDmg>();
 
         Bombitas = new GameObject[5];
     }
@@ -43,7 +53,7 @@ public class DmgController : MonoBehaviour
 
     public void BuscadorDAÑO()
     {
-        if (buscadorC.ataco == true)
+        if (dogC.ataco == true)
         {
 
             plyr.actualvida -= 1.75f;
@@ -53,7 +63,7 @@ public class DmgController : MonoBehaviour
 
     public void MuerteBomba()
     {
-        if (Bcontrol.vida <= 0)
+        if (bombdmg.vida <= 0)
         {
             plyrDash.killedEnemy = true;
             Destroy(gameObject);
@@ -62,7 +72,7 @@ public class DmgController : MonoBehaviour
 
     public void MuerteBuscador()
     {
-        if (buscadorC.vida <= 0)
+        if (dogdmg.vida <= 0)
         {
             plyrDash.killedEnemy = true;
             Destroy(gameObject);

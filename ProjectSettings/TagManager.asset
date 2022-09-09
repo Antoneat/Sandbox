@@ -39,6 +39,8 @@ TagManager:
   - Bombita
   - AtkBomb
   - damageController
+  - Buscador
+  - DetectorBicho
   layers:
   - Default
   - TransparentFX
