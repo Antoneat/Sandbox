@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombController : MonoBehaviour
+public class VerdugoController : MonoBehaviour
 {
-	
 	public UnityEngine.AI.NavMeshAgent agent;
 
 	public int destPoint = 0;
@@ -34,7 +33,7 @@ public class BombController : MonoBehaviour
 
 		agent.SetDestination(goal.position);
 
-		
+
 
 		dead = false;
 		basicoGO.SetActive(false);
@@ -43,7 +42,7 @@ public class BombController : MonoBehaviour
 
 		coPlay = false;
 
-		vida = 5;
+		vida = 10;
 	}
 
 	void Update()
@@ -65,9 +64,9 @@ public class BombController : MonoBehaviour
 		}
 
 
-		if (playerDistance <= atkRange && coPlay==false)
+		if (playerDistance <= atkRange && coPlay == false)
 		{
-			StartCoroutine(AtaqueBasico());
+			StartCoroutine(LanzaEspiritual());
 			agent.isStopped = false;
 		}
 		else if (playerDistance > atkRange)
@@ -100,27 +99,22 @@ public class BombController : MonoBehaviour
 		}
 	}
 
-
-	IEnumerator AtaqueBasico()
+	IEnumerator LanzaEspiritual()
 	{
 		coPlay = true;
 		agent.isStopped = true;
-		yield return new WaitForSecondsRealtime(0.75f);
+		yield return new WaitForSecondsRealtime(1f);
 		agent.isStopped = false;
 		basicoGO.SetActive(true);
-		//atkBTxt.SetActive(true);
-		yield return new WaitForSecondsRealtime(1.5f);
+		yield return new WaitForSecondsRealtime(2f);
 		basicoGO.SetActive(false);
-		//atkBTxt.SetActive(false);
 		yield return new WaitForSecondsRealtime(1f);
 		coPlay = false;
 		yield break;
 	}
 
-
 	private void OnCollisionEnter(Collision collision)
 	{
 		if (collision.gameObject.CompareTag("FueraDelMundo")) Destroy(gameObject); // Si toca los colliders de FueraDelMundo, se destruye.
 	}
-
 }

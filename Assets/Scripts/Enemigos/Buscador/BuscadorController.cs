@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombController : MonoBehaviour
+public class BuscadorController : MonoBehaviour
 {
-	
 	public UnityEngine.AI.NavMeshAgent agent;
 
 	public int destPoint = 0;
@@ -23,7 +22,7 @@ public class BombController : MonoBehaviour
 	//public GameObject atkBTxt;
 
 	public bool coPlay;
-
+	public bool ataco;
 	void Start()
 	{
 		UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -34,7 +33,7 @@ public class BombController : MonoBehaviour
 
 		agent.SetDestination(goal.position);
 
-		
+
 
 		dead = false;
 		basicoGO.SetActive(false);
@@ -42,8 +41,9 @@ public class BombController : MonoBehaviour
 		//atkBTxt.SetActive(false);
 
 		coPlay = false;
+		ataco = false;
 
-		vida = 5;
+		vida = 10;
 	}
 
 	void Update()
@@ -65,9 +65,9 @@ public class BombController : MonoBehaviour
 		}
 
 
-		if (playerDistance <= atkRange && coPlay==false)
+		if (playerDistance <= atkRange && coPlay == false)
 		{
-			StartCoroutine(AtaqueBasico());
+			StartCoroutine(Mordisco());
 			agent.isStopped = false;
 		}
 		else if (playerDistance > atkRange)
@@ -100,27 +100,29 @@ public class BombController : MonoBehaviour
 		}
 	}
 
-
-	IEnumerator AtaqueBasico()
+	IEnumerator Mordisco()
 	{
 		coPlay = true;
 		agent.isStopped = true;
-		yield return new WaitForSecondsRealtime(0.75f);
+		yield return new WaitForSecondsRealtime(1.5f);
 		agent.isStopped = false;
 		basicoGO.SetActive(true);
-		//atkBTxt.SetActive(true);
-		yield return new WaitForSecondsRealtime(1.5f);
+		if(playerDistance <= atkRange)
+        {
+			ataco = true;
+        }
+		yield return new WaitForSecondsRealtime(2f);
 		basicoGO.SetActive(false);
-		//atkBTxt.SetActive(false);
-		yield return new WaitForSecondsRealtime(1f);
+		ataco = false;
+		yield return new WaitForSecondsRealtime(0.5f);
 		coPlay = false;
 		yield break;
 	}
-
 
 	private void OnCollisionEnter(Collision collision)
 	{
 		if (collision.gameObject.CompareTag("FueraDelMundo")) Destroy(gameObject); // Si toca los colliders de FueraDelMundo, se destruye.
 	}
-
 }
+
+

@@ -38,6 +38,7 @@ TagManager:
   - View5
   - Bombita
   - AtkBomb
+  - damageController
   layers:
   - Default
   - TransparentFX
