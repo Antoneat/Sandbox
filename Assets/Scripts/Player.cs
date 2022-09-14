@@ -64,8 +64,8 @@ public class Player : MonoBehaviour
     public TMP_Text almasText;
 
     [Header("Extra")]
-    [SerializeField] private Enemy enmy;
-    [SerializeField] private Enemy2 enmy2;
+    //[SerializeField] private Enemy enmy;
+    //[SerializeField] private Enemy2 enmy2;
     [SerializeField] private Yaldabaoth yp;
     [SerializeField] private int sceneId = 1;
     int a = 0;
@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         enemigosDerrotados = 0;
         actualvida = maxVida;
-        lifeBar.SetMaxVida(maxVida);
+        //lifeBar.SetMaxVida(maxVida);
         //almas = 0;
         blck = false;
         bloqueoDuracion = bloqueoMaxDuracion;
@@ -130,7 +130,7 @@ public class Player : MonoBehaviour
 
         Caida();
 
-        collecTxt.text = counterCollectables.ToString() + " / 5";
+        //collecTxt.text = counterCollectables.ToString() + " / 5";
 
         counterNum += Time.deltaTime;
 
@@ -488,8 +488,8 @@ public class Player : MonoBehaviour
         Collider[] EnemiesInRange = Physics.OverlapSphere(transform.position, 4f, enemyLayer);
         foreach (Collider enemyInRange in EnemiesInRange)
         {
-            enemyInRange.GetComponent<Enemy>().vida -= cargasDeExplosion * 0.15f;
-            enemyInRange.GetComponent<Enemy2>().vida -= cargasDeExplosion * 0.15f;
+            //enemyInRange.GetComponent<Enemy>().vida -= cargasDeExplosion * 0.15f;
+            //enemyInRange.GetComponent<Enemy2>().vida -= cargasDeExplosion * 0.15f;
             Debug.Log("Devolviendo dmg a enemigos3");
         }
         bloqueoDuracion = bloqueoMaxDuracion;
@@ -531,13 +531,13 @@ public class Player : MonoBehaviour
         {
             if (blck == true)
             {
-                RecieveDmgWhenBlock(enmy.ataqueNormalDMG);
+                //RecieveDmgWhenBlock(enmy.ataqueNormalDMG);
                 cargasDeExplosion++;
                 Debug.Log("Recibiendo dmg reducido");
             }
             else
             {
-                actualvida -= enmy.ataqueNormalDMG;
+                //actualvida -= enmy.ataqueNormalDMG;
                 lifeBar.SetVida(actualvida);
             }
         }
@@ -546,7 +546,7 @@ public class Player : MonoBehaviour
         {
             if (blck == true)
             {
-                RecieveDmgWhenBlock(enmy.mordiscoDMG);
+                //RecieveDmgWhenBlock(enmy.mordiscoDMG);
                 cargasDeExplosion++;
                 SM.ps = PlayerState.Sangrado;
                 Debug.Log("Recibiendo dmg reducido");
@@ -554,7 +554,7 @@ public class Player : MonoBehaviour
             else
             {
                 SM.ps = PlayerState.Sangrado;
-                actualvida -= enmy.mordiscoDMG;
+                //actualvida -= enmy.mordiscoDMG;
                 lifeBar.SetVida(actualvida);
             }
         } 
@@ -563,13 +563,13 @@ public class Player : MonoBehaviour
         {
             if (blck == true)
             {
-                RecieveDmgWhenBlock(enmy2.atkbasDMG);
+                //RecieveDmgWhenBlock(enmy2.atkbasDMG);
                 cargasDeExplosion++;
                 Debug.Log("Recibiendo dmg reducido");
             }
             else
             {
-                actualvida -= enmy2.atkbasDMG;
+                //actualvida -= enmy2.atkbasDMG;
                 lifeBar.SetVida(actualvida);
             }
         }
@@ -578,7 +578,7 @@ public class Player : MonoBehaviour
         {
             if (blck == true)
             {
-                RecieveDmgWhenBlock(enmy2.golpeDMG);
+                //RecieveDmgWhenBlock(enmy2.golpeDMG);
                 cargasDeExplosion++;
                 SM.ps = PlayerState.Quemado;
                 Debug.Log("Recibiendo dmg reducido");
@@ -586,7 +586,7 @@ public class Player : MonoBehaviour
             else
             {
                 SM.ps = PlayerState.Quemado;
-                actualvida -= enmy2.golpeDMG;
+                //actualvida -= enmy2.golpeDMG;
                 lifeBar.SetVida(actualvida);
             }
         }
@@ -595,7 +595,7 @@ public class Player : MonoBehaviour
         {
             if (blck == true)
             {
-                RecieveDmgWhenBlock(enmy2.rafagaDMG);
+                //RecieveDmgWhenBlock(enmy2.rafagaDMG);
                 cargasDeExplosion++;
                 SM.ps = PlayerState.Quemado;
                 Debug.Log("Recibiendo dmg reducido");
@@ -603,7 +603,7 @@ public class Player : MonoBehaviour
             else
             {
                 SM.ps = PlayerState.Quemado;
-                actualvida -= enmy2.rafagaDMG;
+                //actualvida -= enmy2.rafagaDMG;
                 lifeBar.SetVida(actualvida);
             }
         }

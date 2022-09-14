@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4906008913135897420}
   - component: {fileID: 4906008913135897421}
   - component: {fileID: 4906008913135897422}
-  - component: {fileID: 4906008913135897436}
   - component: {fileID: 4906008913135897411}
+  - component: {fileID: 244197605335388816}
   m_Layer: 6
   m_Name: Buscador
   m_TagString: Enemigo
@@ -89,18 +89,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4906008913135897436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4906008913135897410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3061a19e9f685343871e66918f1a92b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4906008913135897411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,11 +107,22 @@ MonoBehaviour:
   playerDistance: 0
   awareAI: 10
   atkRange: 5
-  vida: 10
-  dead: 0
   basicoGO: {fileID: 4906008914278288994}
   coPlay: 0
   ataco: 0
+--- !u!114 &244197605335388816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4906008913135897410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3061a19e9f685343871e66918f1a92b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 0
 --- !u!1 &4906008913384902801
 GameObject:
   m_ObjectHideFlags: 0

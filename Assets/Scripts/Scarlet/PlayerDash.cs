@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerDash : MonoBehaviour
 {
-    [Header("Referencias")]
-    public Transform orientation;
     private Rigidbody rgbd;
     private PlayerMovement playerMovement;
 
