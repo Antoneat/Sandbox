@@ -20,9 +20,18 @@ public class BuscadorDmg : MonoBehaviour
 
     void Update()
     {
-
+        MuerteBuscador();
     }
 
+
+    public void MuerteBuscador()
+    {
+        if (vida <= 0)
+        {
+            plyr.killedEnemy = true;
+            Destroy(gameObject);
+        }
+    }
     private void OnTriggerEnter(Collider collider)
     {
 

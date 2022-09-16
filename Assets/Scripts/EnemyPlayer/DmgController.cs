@@ -34,9 +34,9 @@ public class DmgController : MonoBehaviour
     void Update()
     {
         Bombitas = GameObject.FindGameObjectsWithTag("Bombita");
-        MuerteBomba();
+     
         BombDAÑO();
-        BuscadorDAÑO();
+
     }
 
     public void BombDAÑO()
@@ -61,22 +61,8 @@ public class DmgController : MonoBehaviour
         }
     }
 
-    public void MuerteBomba()
-    {
-        if (bombdmg.vida <= 0)
-        {
-            plyrDash.killedEnemy = true;
-            Destroy(gameObject);
-        }
-    }
+  
 
-    public void MuerteBuscador()
-    {
-        if (dogdmg.vida <= 0)
-        {
-            plyrDash.killedEnemy = true;
-            Destroy(gameObject);
-        }
-    }
+  
 
 }

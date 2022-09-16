@@ -14706,7 +14706,7 @@ GameObject:
   - component: {fileID: 8492312290343823744}
   - component: {fileID: 8492312290343823750}
   - component: {fileID: 8492312290343823867}
-  - component: {fileID: 2190157657913349313}
+  - component: {fileID: 7479189065592374264}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -14802,11 +14802,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a002df998cf7b2745add04b97429de3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: {fileID: 1498913005249155498}
   dashForce: 200
   dashDuration: 0.25
   killedEnemy: 1
---- !u!114 &2190157657913349313
+--- !u!114 &7479189065592374264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14815,7 +14814,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1498913005249155503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f02ffc7348fcf884a80848a28e2a600e, type: 3}
+  m_Script: {fileID: 11500000, guid: 64b7b04188d6253419da0270be0095aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   actualvida: 0

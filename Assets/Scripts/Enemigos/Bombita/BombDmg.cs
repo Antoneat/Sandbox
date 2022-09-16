@@ -20,9 +20,16 @@ public class BombDmg : MonoBehaviour
     
     void Update()
     {
-
+        MuerteBomba();
     }
-
+    public void MuerteBomba()
+    {
+        if (vida <= 0)
+        {
+            plyr.killedEnemy = true;
+            Destroy(gameObject);
+        }
+    }
     private void OnTriggerEnter(Collider collider)
     {
       
